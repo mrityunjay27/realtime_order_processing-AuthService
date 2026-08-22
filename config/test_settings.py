@@ -72,3 +72,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'accounts.User'
+
+JWT_PRIVATE_KEY_PATH = str(BASE_DIR / "keys" / "test_private.pem")
+JWT_PUBLIC_KEY_PATH = str(BASE_DIR / "keys" / "test_public.pem")
+JWT_ISSUER = "auth-service-test"
+ACCESS_TOKEN_TTL_SECONDS = 900
