@@ -90,6 +90,7 @@ AUTH_USER_MODEL = 'accounts.User'
 JWT_PRIVATE_KEY_PATH = os.getenv("JWT_PRIVATE_KEY_PATH", str(BASE_DIR / "keys" / "private.pem"))
 JWT_PUBLIC_KEY_PATH = os.getenv("JWT_PUBLIC_KEY_PATH", str(BASE_DIR / "keys" / "public.pem"))
 JWT_ISSUER = os.getenv("JWT_ISSUER", "auth-service")
+JWT_AUDIENCE = os.getenv("JWT_AUDIENCE", "api-gateway")
 ACCESS_TOKEN_TTL_SECONDS = int(os.getenv("ACCESS_TOKEN_TTL_SECONDS", "900"))
 
 LOGGING = get_logging_config(service_name=SERVICE_NAME)

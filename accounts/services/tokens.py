@@ -42,6 +42,7 @@ def generate_access_token(user) -> str:
         "role": user.role,
         "token_type": "access",
         "iss": settings.JWT_ISSUER,
+        "aud": settings.JWT_AUDIENCE,
         "iat": now,
         "exp": now + timedelta(seconds=settings.ACCESS_TOKEN_TTL_SECONDS),
         "jti": str(uuid.uuid4()),
@@ -55,4 +56,5 @@ def decode_access_token(token: str) -> dict:
         public_key(),
         algorithms=[ALGORITHM],
         issuer=settings.JWT_ISSUER,
+        audience=settings.JWT_AUDIENCE,
     )
